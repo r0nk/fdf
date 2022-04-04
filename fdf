@@ -1,0 +1,37 @@
+#!/bin/bash
+
+days="\
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+Monday next week
+Tuesday next week
+Wednesday next week
+Thursday next week
+Friday next week
+Saturday next week
+Sunday next week
+"
+
+months="\
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+"
+
+hour_minutes="$(echo {1..23}:{15,30,45,00} | tr ' ' '\n')"
+
+date -Im -d "$(echo "$days $months $hour_minutes" | fzf)"
